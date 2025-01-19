@@ -1,9 +1,10 @@
-import React from 'react';
+"use client"
+import React,{useState} from 'react';
 import { Button } from '@/components/ui/button';
 import Emptystate from './_components/Emptystate';
 
 function DashboardPage() {
-  const [videoList,setVideoList] = React.useState([]);
+  const [videoList,setVideoList] = useState([]);
 
   return (
     <div>
