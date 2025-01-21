@@ -9,6 +9,8 @@ import CustomLoading from './_components/CustomLoading';
 
 function CreateNewPage(){
   const [formData,setFromData] = useState();
+  const [loading,setloading] = useState(false);
+  const [videoScript,setVideoScript] = useState();
   const onHandleInputChange=(fieldName,fieldValue)=>{
      setFromData(prev=>({
       ...prev,
@@ -21,14 +23,26 @@ function CreateNewPage(){
   }
 
   const GetVideoScript = async() => {
+    setloading(true);
     const prompt = 'Write a script to generate '+formData.duration+' video on topic : '+formData.topic+' along with Al image prompt in '+formData.imageStyle+' for each scene and give me result in JSON format with imagePrompt and Content Text as field, No Plain text\n';
 
     console.log(prompt);
     const result = await axios.post('/api/get-video-script',{
       prompt:prompt
     }).then(resp=>{
-      console.log(resp.data);
+      console.log(resp.data.result);
+      setVideoScript(resp.data.result);
+      GenerateAudionFile();
     })
+    setloading(false);
+  }
+
+  const GenerateAudionFile = async() => {
+    let script = '';
+    videoScript.forEach(item => {
+      script += item.contentText + ' ';
+    });
+    console.log(script);
   }
   return (
     <div  className="md:px-20">
