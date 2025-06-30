@@ -1,37 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ShortifyAI
 
-## Getting Started
+## Overview
+ShortifyAI is a web application that generates short videos based on user inputs. Users can provide an image, topic, and duration, and the application creates a video with accompanying audio using the Gemini API.
 
-First, run the development server:
+## Features
+- **Form-Based Interface**: Allows users to input an image, topic, and video duration for customized video generation.
+- **Audio Integration**: Utilizes the Gemini API to convert generated content into audio, enhancing video output.
+- **Efficient Workflow**: Streamlines the process of handling user inputs to produce short videos quickly.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Frontend**: Next.js, JavaScript
+- **API**: Gemini API for audio generation
+- **Backend**: Next.js API routes for processing inputs
+
+## Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/shortifyai.git
+   cd shortifyai
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Set Up Environment Variables**:
+   Create a `.env.local` file in the root directory and add your Gemini API key:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+4. **Run the Application**:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:3000`.
+
+## Usage
+1. Navigate to the application in your browser.
+2. Fill out the form with:
+   - An image file (e.g., PNG, JPG)
+   - A topic for the video content
+   - Desired video duration (in seconds)
+3. Submit the form to generate a video with audio narration.
+4. Download or preview the generated video.
+
+## Dependencies
+- `next`: Framework for server-rendered React applications
+- `react`: UI library
+- `axios`: For making API requests to Gemini API
+- (Add other dependencies as needed)
+
+## API Integration
+- **Gemini API**: Used for converting text content into audio. Ensure you have a valid API key and sufficient quota for audio generation.
+- API requests are handled via Next.js API routes to securely process user inputs and communicate with the Gemini API.
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# snap-cut
