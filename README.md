@@ -16,8 +16,8 @@ ShortifyAI is a web application that generates short videos based on user inputs
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/shortifyai.git
-   cd shortifyai
+   git clone [https://github.com/shivamxverma/shortifyAI.git](https://github.com/shivamxverma/ShortifyAI.git)
+   cd shortifyAI
    ```
 
 2. **Install Dependencies**:
